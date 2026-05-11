@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>令和9年度新設 叡智コース | 関東第一高等学校</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#002B5B', /* 関東第一の知性を表すネイビー */
+                            light: '#F8FAFC',
+                            gold: '#B8860B', /* 叡智を表すアクセントカラー */
+                            text: '#334155'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap');
+        body { font-family: 'Noto Sans JP', sans-serif; color: #334155; }
+        .font-serif { font-family: 'Noto Serif JP', serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,43,91,0.95) 0%, rgba(0,20,40,0.85) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .pattern-bg {
+            background-color: #F8FAFC;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23002B5B' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-brand-light antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-brand-blue text-white flex items-center justify-center rounded font-serif font-bold text-xl">関</div>
+                <div>
+                    <div class="text-xs text-gray-500 tracking-wider">関東第一高等学校</div>
+                    <div class="font-serif font-bold text-xl text-brand-blue tracking-widest">叡智コース<span class="text-xs ml-2 text-brand-gold">令和9年度新設</span></div>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <a href="#events" class="bg-brand-gold hover:bg-yellow-600 text-white px-6 py-2 rounded-full text-sm font-medium transition duration-300 shadow-md">
+                    イベント予約
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-32 md:py-48 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand-gold/20 border border-brand-gold text-brand-gold text-sm font-bold tracking-wider mb-6">
+                    NEW COURSE 2027
+                </span>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6">
+                    仲間と共に、<br>
+                    一生モノのエンジンを積む。
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed font-light">
+                    限界線を消し去り、自らルートを切り拓く力。<br>
+                    少数精鋭の環境で「教える」以上のインスピレーションを与え、<br>
+                    最難関を突破する真の学力を育成します。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#features" class="bg-white text-brand-blue px-8 py-3 rounded-full text-center font-bold hover:bg-gray-100 transition duration-300">
+                        コースの特長を知る
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute bottom-0 right-0 w-1/3 h-full opacity-20 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop')] bg-cover mix-blend-overlay"></div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl font-serif font-bold text-brand-blue mb-8">教育理念</h2>
+            <p class="text-xl md:text-2xl leading-relaxed font-medium text-gray-700">
+                「叡智・聡明・平和を尊び国際社会で活躍し、<br class="hidden md:block">
+                社会に敏感に反応し生涯学び続ける生徒の育成」
+            </p>
+            <div class="w-24 h-1 bg-brand-gold mx-auto mt-10"></div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 pattern-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-gold font-bold tracking-wider uppercase text-sm">Features</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mt-2">叡智コースの特長</h2>
+            </div>
+
+            <div class="space-y-24">
+                
+                <!-- Feature 1: 少数精鋭 -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 relative">
+                        <div class="absolute inset-0 bg-brand-blue translate-x-4 translate-y-4 rounded-lg"></div>
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop" alt="対話重視の授業" class="relative z-10 rounded-lg shadow-xl object-cover h-80 w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="text-brand-gold font-bold text-xl mb-2">Point 1</div>
+                        <h3 class="text-2xl font-serif font-bold text-brand-blue mb-4">少数精鋭の「師弟同行」</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            大学合格のその先を見据えた対話を重視します。一方的な講義ではなく、生徒と教員が共に考え、議論を深める少人数制の環境。仲間を引き上げる責任感が芽生える、密度の濃い36ヶ月がここから始まります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4: 指導陣 (PDF Point 4) -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-1/2 relative">
+                        <div class="absolute inset-0 bg-brand-gold translate-x-4 translate-y-4 rounded-lg"></div>
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" alt="強力な指導陣" class="relative z-10 rounded-lg shadow-xl object-cover h-80 w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="text-brand-gold font-bold text-xl mb-2">Point 2</div>
+                        <h3 class="text-2xl font-serif font-bold text-brand-blue mb-4">自らも最難関を突破してきた指導陣</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            コースを支えるのは、「教える」以上のインスピレーションを与える圧倒的な指導陣です。東京大学、東京科学大学、東京学芸大学、早稲田大学、お茶の水女子大学、海外大学など、様々なバックグラウンドを持つ教員やチューターが、生徒の「生涯学び続ける力」を強烈に後押しします。
+                        </p>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-sm text-gray-500">
+                            <strong class="text-brand-blue">指導陣のバックグラウンド例：</strong><br>
+                            東工大大学院(無機物性化学)、東京学芸大(エンジニアリング教育)、マーシャル大大学院、東京科学大、早稲田大、お茶の水女子大、東大大学院(日本上代文学) など多数
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5: 学習環境 (PDF Point 5) -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 relative">
+                        <div class="absolute inset-0 bg-brand-blue translate-x-4 translate-y-4 rounded-lg"></div>
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop" alt="校内完結型学習環境" class="relative z-10 rounded-lg shadow-xl object-cover h-80 w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="text-brand-gold font-bold text-xl mb-2">Point 3</div>
+                        <h3 class="text-2xl font-serif font-bold text-brand-blue mb-4">校内完結型学習環境<br><span class="text-lg text-gray-500 font-sans font-normal">専用学習支援センターで「知の最前線」に浸る</span></h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            学校の中に「最強の予備校」機能を完備しました。校舎1棟まるごとすべてが自習室にリノベーションされています。静かな環境で勉強に励むことが可能な「サイレント自習室」、議論しながら学習を進めることができる「グループ学習室」を完備。
+                        </p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i>
+                                <span><strong>現役学生チューター常駐：</strong>東京大学、東京科学大学などのチューターがサポート。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i>
+                                <span><strong>即時質問対応：</strong>「わからない」を翌日に持ち越させません。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i>
+                                <span><strong>学習計画アドバイス：</strong>年齢が近いからこそできる、実体験に基づいた的確な助言。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Schedule -->
+    <section id="events" class="py-24 bg-brand-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">2026 Event Schedule</h2>
+                <p class="text-blue-200">開催時間などのイベント内容・ご予約詳細はホームページをご覧ください。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- 関イチフェア -->
+                <div class="bg-white text-gray-800 rounded-xl p-8 shadow-2xl">
+                    <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-6">
+                        <h3 class="text-2xl font-bold text-brand-blue">関イチフェア</h3>
+                        <span class="bg-brand-blue text-white text-xs px-3 py-1 rounded-full">WEB予約</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-6">学校説明会・個別相談などの中学生向けイベントです。</p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-2 text-sm font-medium">
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>4月18日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>4月25日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>5月23日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>5月30日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>6月13日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>6月20日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>6月27日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>7月18日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>7月29日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>7月30日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>8月5日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>8月6日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>8月8日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>8月9日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>8月22日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>8月23日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>9月12日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>9月26日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>9月27日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>10月10日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>10月11日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>10月17日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>10月24日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>10月31日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>11月7日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>11月14日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>11月21日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>11月28日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>11月29日</div>
+                        <div class="flex items-center"><i class="far fa-calendar-alt text-brand-gold mr-2"></i>12月5日</div>
+                    </div>
+                </div>
+
+                <!-- 関一祭 -->
+                <div class="bg-gradient-to-br from-brand-gold to-yellow-600 text-white rounded-xl p-8 shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-star text-white/50 mr-3 text-3xl"></i>
+                            関一祭 <span class="text-lg font-normal ml-2">[文化祭]</span>
+                        </h3>
+                        <p class="mb-8 text-white/90">生徒が主体となって開催される関一祭。関東一高を代表する行事です。叡智コースの熱気ある空気感を、ぜひ肌で感じてください。</p>
+                        
+                        <div class="flex space-x-6 text-2xl font-bold font-serif">
+                            <div>9月19日<span class="text-sm font-sans font-normal ml-1">(土)</span></div>
+                            <div>9月20日<span class="text-sm font-sans font-normal ml-1">(日)</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-8 border-t border-white/20">
+                        <p class="text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i> 新校舎完成までは南門よりお越しください。完成後は正門を利用できます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-12 h-12 bg-gray-800 text-white flex items-center justify-center rounded font-serif font-bold text-2xl mx-auto mb-6">関</div>
+            <h4 class="text-white text-xl font-serif mb-2">関東第一高等学校</h4>
+            <p class="mb-8">〒132-0031 東京都江戸川区松島2-10-11</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+            </div>
+            <p class="text-sm">&copy; 2026 Kanto Daiichi High School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
