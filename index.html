@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>叡智コース（2027年4月新設） | 関東第一高等学校</title>
-    <!-- Tailwind CSS & FontAwesome -->
+    <!-- Tailwind CSS & FontAwesome & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
@@ -13,32 +13,31 @@
                 extend: {
                     colors: {
                         kanto: {
-                            purple: '#9a5ebe',     /* 公式HPパープル */
-                            darkPurple: '#4a2860', /* 深みのあるノーブルパープル（背景・引き締め用） */
-                            gold: '#C5A059',       /* 伝統と気品を感じるゴールド */
-                            goldLight: '#FBF9F3',  /* ゴールドを帯びた上品な極薄背景 */
-                            light: '#F8F6FA',      /* ほんのり紫みを感じる爽やかな極薄グレー背景 */
-                            accent: '#E60012'      /* 注目用の赤 */
+                            purple: '#9a5ebe',     /* 公式HP主軸の気品あるパープル */
+                            purpleLight: '#f6effa',/* パープルが美しく映える極淡いラベンダー背景 */
+                            purpleHover: '#844ca8',/* ボタン等のホバー用 */
+                            gold: '#C5A059',       /* 伝統を紡ぐゴールド */
+                            goldLight: '#FCF9F3',  /* ゴールドを帯びた上品な極薄背景 */
+                            slateLight: '#F7F8FA', /* クリーンな背景用グレー */
+                            darkText: '#2B2330'    /* パープルを帯びた深い文字色 */
                         }
                     },
                     fontFamily: {
-                        /* 公式HPのフォント構成を最優先で再現 */
+                        /* 公式HPのすっきりと現代的な游ゴシックを最優先で再現 */
                         kantoSans: [
+                            '"Yu Gothic"', 
+                            'YuGothic', 
                             '"Noto Sans JP"', 
-                            '"Helvetica Neue"', 
-                            'Arial', 
                             '"Hiragino Kaku Gothic ProN"', 
                             '"Hiragino Sans"', 
                             'Meiryo', 
                             'sans-serif'
                         ],
-                        kantoSerif: [
-                            '"Noto Serif JP"', 
-                            '"Times New Roman"', 
-                            '"Yu Mincho"', 
-                            '"YuMincho"', 
-                            '"Hiragino Mincho ProN"', 
-                            'serif'
+                        /* 英数字を洗練された印象にする欧文Montserrat */
+                        kantoNum: [
+                            'Montserrat',
+                            '"Helvetica Neue"',
+                            'sans-serif'
                         ]
                     }
                 }
@@ -46,72 +45,71 @@
         }
     </script>
     <style>
-        /* 公式HPで使用されているGoogle FontsのNotoフォントを読み込み */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700;900&display=swap');
+        /* 游ゴシックを美しく滑らかにするスタイル調整と、欧文Montserratフォントの読み込み */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
         html {
             scroll-behavior: smooth;
         }
-        /* 基本フォントを公式HPのゴシック系に統一 */
         body {
-            font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            letter-spacing: 0.03em;
+            font-family: "Yu Gothic", YuGothic, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            letter-spacing: 0.02em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .font-kanto-serif {
-            font-family: "Noto Serif JP", "Times New Roman", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+        .font-num {
+            font-family: 'Montserrat', sans-serif;
         }
         .hero-pattern {
-            background: linear-gradient(135deg, rgba(154, 94, 190, 0.95) 0%, rgba(74, 40, 96, 0.9) 100%), 
+            /* 重さを抑え、明るくグラデーションする透明感のある背景 */
+            background: linear-gradient(135deg, rgba(154, 94, 190, 0.92) 0%, rgba(116, 68, 148, 0.82) 100%), 
                         url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
     </style>
 </head>
-<body class="text-slate-800 bg-white font-kantoSans">
+<body class="text-kanto-darkText bg-white">
 
     <!-- Navigation Header (公式HPからのスムーズな遷移に特化したシンプルデザイン) -->
-    <header class="bg-white shadow sticky top-0 z-50 border-b-2 border-kanto-purple">
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b-2 border-kanto-purple">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div>
-                    <h1 class="font-bold text-base md:text-lg leading-tight tracking-wider text-kanto-darkPurple font-kanto-serif">関東第一高等学校</h1>
-                    <p class="text-[9px] md:text-[10px] text-kanto-gold font-bold tracking-widest">KANTO DAIICHI HIGH SCHOOL</p>
+                    <h1 class="font-bold text-base md:text-lg leading-none tracking-wider text-kanto-purple">関東第一高等学校</h1>
+                    <p class="text-[9px] md:text-[10px] text-kanto-gold font-bold tracking-widest mt-1 font-num">KANTO DAIICHI HIGH SCHOOL</p>
                 </div>
             </div>
             
-            <nav class="hidden md:flex items-center gap-6 font-bold text-xs lg:text-sm text-kanto-darkPurple">
-                <a href="#points" class="hover:text-kanto-purple transition">叡智の5つの約束</a>
-                <a href="#scholarship" class="hover:text-kanto-purple transition">特待制度・学費免除</a>
-                <a href="https://www.kanto-ichiko.ac.jp/" class="text-slate-500 hover:text-kanto-purple transition flex items-center gap-1">
-                    <i class="fas fa-arrow-left"></i> 公式HPに戻る
+            <nav class="hidden md:flex items-center gap-6 font-bold text-xs lg:text-sm text-kanto-purple">
+                <a href="#points" class="hover:text-kanto-purpleHover transition">叡智の5つの約束</a>
+                <a href="#scholarship" class="hover:text-kanto-purpleHover transition">特待制度・学費免除</a>
+                <a href="https://www.kanto-ichiko.ac.jp/" class="text-slate-400 hover:text-kanto-purple transition flex items-center gap-1 font-medium">
+                    <i class="fas fa-arrow-left text-[10px]"></i> 公式HPに戻る
                 </a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-pattern text-white py-20 md:py-28 relative">
+    <section class="hero-pattern text-white py-20 md:py-32 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl bg-kanto-darkPurple/85 p-6 md:p-10 rounded-lg border-l-4 border-kanto-gold backdrop-blur-sm">
-                <span class="inline-block bg-kanto-gold text-white text-xs font-bold tracking-widest px-3 py-1 rounded mb-4">
-                    令和9年度（2027年）4月新設
+            <div class="max-w-2xl bg-white/95 p-6 md:p-10 rounded-lg border-l-4 border-kanto-gold shadow-xl text-kanto-darkText">
+                <span class="inline-block bg-kanto-purple text-white text-xs font-bold tracking-widest px-3 py-1 rounded mb-4 font-num">
+                    2027.4 NEW COURSE
                 </span>
-                <h2 class="text-3xl md:text-5xl font-kanto-serif font-bold leading-tight mb-4 text-white">
+                <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-4 text-kanto-purple">
                     最難関国立大学を、<br class="hidden sm:inline">
-                    現役合格するための<br class="hidden sm:inline">
-                    「叡智」。
+                    現役合格するための「叡智」。
                 </h2>
-                <p class="text-xs md:text-sm text-slate-200 mb-8 leading-relaxed">
-                    東京大学・京都大学・東京科学大学（旧東工大等）をはじめとする最難関国立大学へ。<br>
-                    20名1クラスという圧倒的な少数精鋭環境と、自らも最難関を突破してきた指導陣が、<br>
-                    少数精鋭だからこそ可能な「師弟同行の36ヶ月」をスタートさせます。
+                <p class="text-xs md:text-sm text-slate-600 mb-8 leading-relaxed font-medium">
+                    東京大学・京都大学・東京科学大学（旧東工大等）をはじめとする最難関国立大学へ。20名1クラスという圧倒的な少数精鋭環境と、自らも最難関を突破してきた指導陣が、少数精鋭だからこそ可能な「師弟同行の36ヶ月」をスタートさせます。
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#points" class="bg-white text-kanto-darkPurple hover:bg-slate-100 font-bold px-6 py-3 rounded text-xs md:text-sm text-center transition shadow">
+                    <a href="#points" class="bg-kanto-purple hover:bg-kanto-purpleHover text-white font-bold px-6 py-3 rounded text-xs md:text-sm text-center transition shadow-md">
                         叡智コースの特長
                     </a>
-                    <a href="#scholarship" class="bg-kanto-gold hover:bg-yellow-600 text-white font-bold px-6 py-3 rounded text-xs md:text-sm text-center transition shadow">
+                    <a href="#scholarship" class="bg-kanto-gold hover:bg-yellow-600 text-white font-bold px-6 py-3 rounded text-xs md:text-sm text-center transition shadow-md">
                         3年間最大455万円免除の詳細
                     </a>
                 </div>
@@ -120,12 +118,12 @@
     </section>
 
     <!-- Points section (The 5 Promises) -->
-    <section id="points" class="py-20 bg-kanto-light">
+    <section id="points" class="py-20 bg-kanto-slateLight">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-kanto-gold font-bold text-sm tracking-widest uppercase block">The 5 Promises</span>
-                <h3 class="text-3xl font-kanto-serif font-bold text-kanto-darkPurple mt-1">叡智コース 5つの約束</h3>
-                <p class="text-xs text-slate-500 mt-2">最難関現役合格を現実にする、本校独自の教育パッケージ</p>
+                <span class="text-kanto-gold font-bold text-sm tracking-widest uppercase block font-num">The 5 Promises</span>
+                <h3 class="text-3xl font-bold text-kanto-purple mt-1">叡智コース 5つの約束</h3>
+                <p class="text-xs text-slate-500 mt-2 font-medium">最難関現役合格を現実にする、本校独自の教育パッケージ</p>
             </div>
 
             <!-- Grid -->
@@ -134,12 +132,12 @@
                 <!-- Point 1 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
                     <div class="bg-kanto-purple text-white p-4 flex items-center justify-between">
-                        <span class="font-kanto-serif font-bold text-lg tracking-wider">Point 1</span>
+                        <span class="font-num font-bold text-lg tracking-wider">Point 1</span>
                         <i class="fas fa-users text-base opacity-75"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-kanto-serif font-bold text-base text-kanto-darkPurple mb-3">少数精鋭「師弟同行」</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <h4 class="font-bold text-base text-kanto-purple mb-3">少数精鋭「師弟同行」</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
                             1学年20名1クラス制を徹底。大学合格のその先を見据え、徹底的な対話を重視します。教員が一人ひとりの可能性を引き出し、生徒同士が切磋琢磨する高密度な36ヶ月をデザインします。
                         </p>
                     </div>
@@ -148,12 +146,12 @@
                 <!-- Point 2 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
                     <div class="bg-kanto-purple text-white p-4 flex items-center justify-between">
-                        <span class="font-kanto-serif font-bold text-lg tracking-wider">Point 2</span>
+                        <span class="font-num font-bold text-lg tracking-wider">Point 2</span>
                         <i class="fas fa-bolt text-base opacity-75"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-kanto-serif font-bold text-base text-kanto-darkPurple mb-3">逆算の「最速カリキュラム」</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <h4 class="font-bold text-base text-kanto-purple mb-3">逆算の「最速カリキュラム」</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
                             週6日制を採用し、圧倒的な授業数を確保。高校全範囲のインプットを「2年次までに完了」させます。3年次の1年間すべてを実戦演習と志望校別個別補強に充てる、絶対的合格戦略です。
                         </p>
                     </div>
@@ -162,12 +160,12 @@
                 <!-- Point 3 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
                     <div class="bg-kanto-purple text-white p-4 flex items-center justify-between">
-                        <span class="font-kanto-serif font-bold text-lg tracking-wider">Point 3</span>
+                        <span class="font-num font-bold text-lg tracking-wider">Point 3</span>
                         <i class="fas fa-globe-americas text-base opacity-75"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-kanto-serif font-bold text-base text-kanto-darkPurple mb-3">世界の叡智に触れる修学旅行</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <h4 class="font-bold text-base text-kanto-purple mb-3">世界の叡智に触れる修学旅行</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
                             アメリカの海外トップユニバーシティを訪問し、世界の研究・知の最前線に触れます。<strong>特別助成金約50万円が免除</strong>され、国内旅行並みの自己負担で世界への視野を拓きます。
                         </p>
                     </div>
@@ -175,13 +173,13 @@
 
                 <!-- Point 4 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition lg:col-span-1">
-                    <div class="bg-kanto-darkPurple text-white p-4 flex items-center justify-between">
-                        <span class="font-kanto-serif font-bold text-lg tracking-wider text-kanto-gold">Point 4</span>
+                    <div class="bg-white text-kanto-purple p-4 flex items-center justify-between border-b border-slate-100">
+                        <span class="font-num font-bold text-lg tracking-wider text-kanto-gold">Point 4</span>
                         <i class="fas fa-graduation-cap text-base text-kanto-gold"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-kanto-serif font-bold text-base text-kanto-darkPurple mb-3">最難関を突破してきた「指導陣」</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <h4 class="font-bold text-base text-kanto-purple mb-3">最難関を突破してきた「指導陣」</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
                             コースを支えるのは、自らも最難関を突破してきた指導陣。「教える」以上の、生涯役立つ知性やキャリアを見据えたインスピレーションを生徒たちに与え、親身に伴走する最高峰の教育環境を提供します。
                         </p>
                     </div>
@@ -189,21 +187,21 @@
 
                 <!-- Point 5 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition lg:col-span-2">
-                    <div class="bg-kanto-darkPurple text-white p-4 flex items-center justify-between">
-                        <span class="font-kanto-serif font-bold text-lg tracking-wider text-kanto-gold">Point 5</span>
+                    <div class="bg-white text-kanto-purple p-4 flex items-center justify-between border-b border-slate-100">
+                        <span class="font-num font-bold text-lg tracking-wider text-kanto-gold">Point 5</span>
                         <i class="fas fa-school text-base text-kanto-gold"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-kanto-serif font-bold text-base text-kanto-darkPurple mb-2">EAstudy Center</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        <h4 class="font-bold text-base text-kanto-purple mb-2 font-num">EAstudy Center</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 font-medium">
                             校舎1棟まるごとすべてが自習室にリノベーションした「EAstudy Center」。静かに集中できるサイレント自習室や、議論可能なグループ自習室の他、叡智コース専用の学習室を備える。
                         </p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                            <div class="flex items-start gap-2">
+                            <div class="flex items-start gap-2 font-medium text-slate-700">
                                 <i class="fas fa-check text-kanto-gold mt-0.5"></i>
                                 <span><strong>現役学生チューター常駐：</strong>東大・東京科学大（旧東工大等）の先輩が毎日指導。</span>
                             </div>
-                            <div class="flex items-start gap-2">
+                            <div class="flex items-start gap-2 font-medium text-slate-700">
                                 <i class="fas fa-check text-kanto-gold mt-0.5"></i>
                                 <span><strong>毎日20時まで開館：</strong>個別ブースも併設し、放課後も徹底的に勉強。</span>
                             </div>
@@ -219,52 +217,54 @@
     <section id="scholarship" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-kanto-gold font-bold text-sm tracking-widest block">SPECIAL SUPPORT</span>
-                <h3 class="text-3xl font-kanto-serif font-bold text-kanto-darkPurple mt-1">「才能」を全面的に支援する、特待制度</h3>
-                <p class="text-xs text-slate-500 mt-2">経済的な理由で最高レベルの学びを諦めさせない、それが私たちの約束です。</p>
+                <span class="text-kanto-gold font-bold text-sm tracking-widest block font-num">SPECIAL SUPPORT</span>
+                <h3 class="text-3xl font-bold text-kanto-purple mt-1">「才能」を全面的に支援する、費用免除特待</h3>
+                <p class="text-xs text-slate-500 mt-2 font-medium">経済的な理由で最高レベルの学びを諦めさせない、それが私たちの約束です。</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                <!-- Main Benefits List -->
-                <div class="lg:col-span-7 bg-kanto-darkPurple text-white p-6 md:p-8 rounded-lg flex flex-col justify-between shadow-lg">
+                <!-- Main Benefits List (より明るく見やすい配色設計に) -->
+                <div class="lg:col-span-7 bg-kanto-purpleLight border border-kanto-purple/20 p-6 md:p-8 rounded-lg flex flex-col justify-between shadow-sm">
                     <div>
-                        <h4 class="font-kanto-serif font-bold text-base md:text-lg text-kanto-gold mb-6 border-b border-kanto-gold/30 pb-3">
-                            <i class="fas fa-award mr-2"></i>叡智コース特待生 3年間全額免除対象
+                        <h4 class="font-bold text-base md:text-lg text-kanto-purple mb-6 border-b border-kanto-purple/10 pb-3">
+                            <i class="fas fa-award mr-2 text-kanto-gold"></i>叡智コース特待生 3年間全額免除対象
                         </h4>
-                        <ul class="space-y-4 text-xs md:text-sm">
+                        <ul class="space-y-4 text-xs md:text-sm font-medium text-slate-700">
                             <li class="flex items-start gap-3">
-                                <span class="bg-kanto-gold text-white text-[10px] px-2 py-0.5 rounded shrink-0 mt-0.5">0円</span>
+                                <span class="bg-kanto-purple text-white text-[10px] px-2 py-0.5 rounded shrink-0 mt-0.5">0円</span>
                                 <span>入学金・授業料・施設設備費（3年間分）</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="bg-kanto-gold text-white text-[10px] px-2 py-0.5 rounded shrink-0 mt-0.5">0円</span>
+                                <span class="bg-kanto-purple text-white text-[10px] px-2 py-0.5 rounded shrink-0 mt-0.5">0円</span>
                                 <span>放課後講習費・季節補習費・個別指導費（塾・予備校費用は完全不要）</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="bg-kanto-gold text-white text-[10px] px-2 py-0.5 rounded shrink-0 mt-0.5">0円</span>
-                                <span>オリエンテーション合宿・勉強合宿・<br>京都大学見学会等の参加費（食費を除く）</span>
+                                <span class="bg-kanto-purple text-white text-[10px] px-2 py-0.5 rounded shrink-0 mt-0.5">0円</span>
+                                <span class="leading-relaxed">
+                                    オリエンテーション合宿・勉強合宿・京都大学見学会等の参加費<span class="text-[10px] md:text-xs opacity-75 font-normal whitespace-nowrap">（食費を除く）</span>
+                                </span>
                             </li>
                         </ul>
                     </div>
-                    <div class="mt-8 pt-6 border-t border-white/20">
-                        <p class="text-[11px] text-slate-300">
+                    <div class="mt-8 pt-6 border-t border-kanto-purple/10">
+                        <p class="text-[11px] text-slate-500 font-medium">
                             ※さらに、1・2年次外部模試優秀者（上位10%以内目安）への「学業優秀者表彰」（図書カード給付）や、本校指定大学（東京、京都、東京科学、一橋等）合格時の「大学入学支援金」制度も整備しています。
                         </p>
                     </div>
                 </div>
 
                 <!-- Simulation Visualizer -->
-                <div class="lg:col-span-5 bg-kanto-light p-6 md:p-8 rounded-lg border border-slate-200 flex flex-col justify-between shadow-sm">
+                <div class="lg:col-span-5 bg-kanto-slateLight p-6 md:p-8 rounded-lg border border-slate-200 flex flex-col justify-between shadow-sm">
                     <div>
-                        <h4 class="font-bold text-kanto-darkPurple text-sm mb-4">学費・学習費用 3年間シミュレーション</h4>
-                        <p class="text-xs text-slate-500 mb-6">
+                        <h4 class="font-bold text-kanto-purple text-sm mb-4">学費・学習費用 3年間シミュレーション</h4>
+                        <p class="text-xs text-slate-500 mb-6 font-medium">
                             予備校代や講習費、合宿費までがすべて含まれるため、一般的な難関私立進学クラス＋予備校の組み合わせと比較して、驚きのサポート力を発揮します。
                         </p>
 
                         <div class="space-y-4">
                             <!-- Other school -->
                             <div>
-                                <div class="flex justify-between text-[11px] font-bold text-slate-500 mb-1">
+                                <div class="flex justify-between text-[11px] font-bold text-slate-500 mb-1 font-num">
                                     <span>他校（私立進学クラス＋予備校）</span>
                                     <span>約 4,550,000 円</span>
                                 </div>
@@ -272,14 +272,13 @@
                                     <div class="bg-slate-400 h-full w-full"></div>
                                 </div>
                             </div>
-                            <!-- Kanto 1 (空っぽ感をなくし、満たされた0円を表現) -->
+                            <!-- Kanto 1 -->
                             <div>
                                 <div class="flex justify-between text-[11px] font-bold text-kanto-purple mb-1">
                                     <span>関東第一 叡智コース</span>
-                                    <span class="text-kanto-darkPurple text-xs md:text-sm font-black">完全免除</span>
+                                    <span class="text-kanto-purple text-xs md:text-sm font-black">完全免除</span>
                                 </div>
                                 <div class="w-full bg-slate-200 h-8 rounded overflow-hidden border border-kanto-gold/50 relative">
-                                    <!-- 0%ではなく、あえて100%のゴールドバーで「全額サポート」の充実感を表現 -->
                                     <div class="bg-gradient-to-r from-kanto-gold to-yellow-600 h-full w-full flex items-center justify-center transition-all duration-1000" id="anim-bar" style="width: 100%;">
                                         <span class="text-[10px] font-extrabold text-white tracking-widest"><i class="fas fa-check-circle mr-1"></i>3年間負担 0円（完全特待生）</span>
                                     </div>
@@ -288,9 +287,9 @@
                         </div>
                     </div>
 
-                    <div class="mt-8 bg-white p-4 rounded border border-kanto-gold/20 text-center">
+                    <div class="mt-8 bg-white p-4 rounded border border-kanto-gold/20 text-center shadow-sm">
                         <span class="text-[11px] font-bold text-slate-500 block">3年間での費用負担差額</span>
-                        <span class="text-xl md:text-2xl font-black text-red-600 block mt-1">最大 約4,550,000円免除</span>
+                        <span class="text-xl md:text-2xl font-black text-red-600 block mt-1 font-num">最大 約4,550,000円免除</span>
                     </div>
                 </div>
             </div>
@@ -300,14 +299,14 @@
     <!-- CTAS (公式ホームページへのコンバージョンを後押し) -->
     <section class="py-16 bg-kanto-goldLight text-center border-t border-b border-kanto-gold/20">
         <div class="max-w-4xl mx-auto px-4">
-            <h3 class="text-xl md:text-2xl font-kanto-serif font-bold text-kanto-darkPurple mb-4">
+            <h3 class="text-xl md:text-2xl font-bold text-kanto-purple mb-4">
                 夢をつかむ力が、この学校にはある。
             </h3>
-            <p class="text-xs md:text-sm text-slate-600 mb-8 leading-relaxed max-w-xl mx-auto">
+            <p class="text-xs md:text-sm text-slate-600 mb-8 leading-relaxed max-w-xl mx-auto font-medium">
                 関イチフェアのご予約は、本校公式HPの予約システムからお願いいたします。
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://www.kanto-ichiko.ac.jp/" class="bg-kanto-purple hover:bg-kanto-darkPurple text-white font-bold px-8 py-3 rounded text-xs tracking-wider transition shadow">
+                <a href="https://www.kanto-ichiko.ac.jp/" class="bg-kanto-purple hover:bg-kanto-purpleHover text-white font-bold px-8 py-3 rounded text-xs tracking-wider transition shadow-md">
                     公式ホームページに戻る
                 </a>
             </div>
@@ -315,11 +314,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-kanto-darkPurple text-slate-400 py-10 text-xs border-t-4 border-kanto-gold">
-        <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
-            <h5 class="text-white text-sm font-bold font-kanto-serif">関東第一高等学校</h5>
-            <p class="text-slate-400">〒132-0031 東京都江戸川区松島2-10-11</p>
-            <div class="text-[10px] text-slate-500 pt-4 border-t border-white/5">
+    <footer class="bg-kanto-purpleLight text-slate-500 py-10 text-xs border-t-4 border-kanto-gold">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-4 font-medium">
+            <h5 class="text-kanto-purple text-sm font-bold">関東第一高等学校</h5>
+            <p class="text-slate-600">〒132-0031 東京都江戸川区松島2-10-11</p>
+            <div class="text-[10px] text-slate-400 pt-4 border-t border-kanto-purple/10">
                 &copy; Kanto Daiichi High School. All Rights Reserved.
             </div>
         </div>
