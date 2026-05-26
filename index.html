@@ -14,7 +14,7 @@
                     colors: {
                         kanto: {
                             purple: '#9a5ebe',     /* 公式HP主軸の気品あるパープル */
-                            deepPurple: '#3d1e52', /* 重厚感と知性を与えるディープパープル（引き締め用） */
+                            deepPurple: '#2d143c', /* 高級感のあるシックな深紫（引き締め用） */
                             purpleLight: '#f6effa',/* 優しいラベンダー背景 */
                             purpleHover: '#844ca8',/* ボタン等のホバー用 */
                             gold: '#C5A059',       /* 伝統を紡ぐゴールド */
@@ -61,12 +61,14 @@
         .font-num {
             font-family: 'Montserrat', sans-serif;
         }
-        .hero-pattern {
-            /* 明るさを保ちつつ、ディープパープルへのグラデーションで高級感をプラス */
-            background: linear-gradient(135deg, rgba(154, 94, 190, 0.95) 0%, rgba(61, 30, 82, 0.9) 100%), 
+        
+        /* 【高級質感アップデート】ビロードのように深く艶やかなラジアルグラデーション背景 */
+        .hero-premium-bg {
+            background: radial-gradient(circle at 15% 30%, rgba(154, 94, 190, 0.98) 0%, rgba(61, 20, 82, 0.99) 55%, rgba(22, 6, 31, 1) 100%),
                         url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
+            background-blend-mode: multiply;
         }
     </style>
 </head>
@@ -96,11 +98,30 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-pattern text-white py-20 md:py-32 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl bg-white/95 p-6 md:p-10 rounded-lg border-l-4 border-kanto-gold shadow-2xl text-kanto-darkText animate-fade-in">
-                <span class="inline-block bg-kanto-purple text-white text-xs font-bold tracking-widest px-3 py-1 rounded mb-4 font-num">
+    <!-- Hero Section (高級感のある極上の深みとゴールドベクターラインの融合) -->
+    <section class="hero-premium-bg text-white py-20 md:py-32 relative overflow-hidden">
+        
+        <!-- 知性を象徴する美しい黄金のSVG流線波形 (レスポンシブ対応・絶対配置) -->
+        <div class="absolute inset-0 pointer-events-none opacity-40 mix-blend-screen z-0">
+            <svg class="w-full h-full min-w-[1000px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" preserveAspectRatio="none">
+                <!-- 深みと光沢を与える繊細なラインアート -->
+                <path d="M-100,250 C300,450 500,-50 900,250 C1300,550 1500,200 1700,350" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" />
+                <path d="M-50,300 C350,400 450,50 850,350 C1250,650 1450,150 1650,400" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.4" />
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#C5A059" stop-opacity="0.9" />
+                        <stop offset="40%" stop-color="#FFF" stop-opacity="0.2" />
+                        <stop offset="70%" stop-color="#C5A059" stop-opacity="0.6" />
+                        <stop offset="100%" stop-color="#9a5ebe" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- 磨き抜かれたモダンな浮遊ホワイトカード -->
+            <div class="max-w-2xl bg-white/95 backdrop-blur-md p-6 md:p-10 rounded-xl border-l-4 border-kanto-gold shadow-[0_25px_50px_-12px_rgba(0,0,0,0.6)] text-kanto-darkText animate-fade-in">
+                <span class="inline-block bg-kanto-purple text-white text-[10px] font-bold tracking-widest px-3 py-1 rounded mb-4 font-num">
                     2027.4 NEW COURSE
                 </span>
                 <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-4 text-kanto-deepPurple">
@@ -188,7 +209,7 @@
                     <div class="p-6">
                         <h4 class="font-bold text-base text-kanto-deepPurple mb-3">最難関を突破してきた「指導陣」</h4>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            コースを支えるのは、自らも最難関を突破してきた指導陣。「教える」以上の、生涯役立つ知性やキャリアを見据えたインスピレーションを生徒たちに与え、親身に伴走する最高峰の教育環境提供します。
+                            コースを支えるのは、自らも最難関を突破してきた指導陣。「教える」以上の、生涯役立つ知性やキャリアを見据えたインスピレーションを生徒たちに与え、親身に伴走する最高峰の教育環境を提供します。
                         </p>
                     </div>
                 </div>
@@ -256,7 +277,7 @@
                     </div>
                     <div class="mt-8 pt-6 border-t border-white/10">
                         <p class="text-[11px] text-slate-300 font-medium">
-                            ※さらに、1・2年次外部模試優秀者（上位10%以内目安）への「学業優秀者表彰」（図書カード給付）や、本校指定大学（東京、京都、東京科学、一橋等）合格時の「大学入学支援金」制度も整備しています。
+                            ※さらに、1・2年次外部模試優秀者（上位10%以内目安）への「学業優秀者表彰」（図書カード給付）や、本校指定大学（東京,京都,東京科学,一橋等）合格時の「大学入学支援金」制度も整備しています。
                         </p>
                     </div>
                 </div>
