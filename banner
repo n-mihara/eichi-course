@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>叡智コース 特設バナー</title>
+    <title>叡智コース 特設バナー（リンクなし・大文字版）</title>
     <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Noto+Sans+JP:wght@700;950&family=Noto+Serif+JP:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Noto+Sans+JP:wght@800;900&family=Noto+Serif+JP:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -42,69 +42,38 @@
             background: linear-gradient(135deg, #FFF 0%, #D8B475 40%, #C5A059 70%, #F5E5C9 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        /* ボタンに走る光のアニメーション */
-        @keyframes shine {
-            100% {
-                left: 125%;
-            }
-        }
-        .shine-effect::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -75%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
-            transform: skewX(-25deg);
-        }
-        .group:hover .shine-effect::after {
-            animation: shine 0.75s;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
 
-    <!-- 570px x 320px 規格サイズバナー -->
-    <a href="https://www.kanto-ichiko.ac.jp/" target="_blank" class="group relative w-[570px] h-[320px] rounded-xl overflow-hidden shadow-2xl banner-texture flex flex-col justify-between p-7 select-none transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(54,22,74,0.4)] border border-white/10">
+    <!-- 570px x 320px 規格サイズバナー (リンク・ホバーエフェクトなし仕様) -->
+    <div class="relative w-[570px] h-[320px] rounded-xl overflow-hidden shadow-2xl banner-texture flex flex-col justify-between p-8 select-none border border-white/10">
         
-        <!-- 背景のホバー光沢効果 -->
-        <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <!-- バナー上部: アピールテキストと誘導アイコン -->
+        <!-- バナー上部: アピールテキスト（文字をさらに大きくクッキリと） -->
         <div class="flex justify-between items-start z-10">
-            <span class="text-xs font-bold tracking-widest text-kanto-gold bg-white/10 border border-kanto-gold/30 px-3 py-1 rounded-full uppercase">
+            <span class="text-xs md:text-sm font-black tracking-widest text-kanto-gold bg-white/10 border border-kanto-gold/40 px-4 py-1.5 rounded-full uppercase">
                 最難関国立大学進学へ
-            </span>
-            <span class="text-kanto-gold/80 group-hover:text-white transition-colors duration-300">
-                <i class="fas fa-circle-chevron-right text-2xl"></i>
             </span>
         </div>
 
-        <!-- バナー中部: メインキャッチコピー (添付ファイル文字配置) -->
+        <!-- バナー中部: メインキャッチコピー (視認性を極限まで高めた超大文字) -->
         <div class="z-10 my-auto">
-            <h2 class="text-white font-sans font-black text-4xl md:text-5.5xl leading-tight tracking-wider filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
+            <h2 class="text-white font-sans font-black text-5xl md:text-[54px] leading-tight tracking-wider filter drop-shadow-[0_5px_10px_rgba(0,0,0,0.6)]">
                 叡智コース<br>
                 誕生。
             </h2>
         </div>
 
-        <!-- バナー下部: 開始年度・ボタン -->
+        <!-- バナー下部: 開始年度 (サイズを極大化し、格式あるフォントに) -->
         <div class="flex justify-between items-end z-10">
-            <!-- 2027/4 Start (山吹ゴールド) -->
-            <div class="font-serif font-bold italic text-3xl md:text-4xl tracking-wider gold-shimmer select-none">
+            <!-- 2027/4 Start (存在感のあるゴールドグラデーション) -->
+            <div class="font-serif font-bold italic text-4xl md:text-[42px] tracking-wider gold-shimmer select-none leading-none">
                 2027/4 Start
             </div>
-
-            <!-- アクションを促す控えめな「詳しく見る」ボタン -->
-            <div class="shine-effect relative overflow-hidden bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[11px] font-bold tracking-widest px-4 py-2 rounded-lg transition-all duration-300">
-                詳しく見る
-            </div>
         </div>
-    </a>
+    </div>
 
 </body>
 </html>
