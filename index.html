@@ -13,12 +13,12 @@
                 extend: {
                     colors: {
                         kanto: {
-                            blue: '#004098',    /* 公式ロイヤルブルー */
-                            navy: '#00205B',    /* 深みのあるネイビー */
-                            gold: '#C5A059',    /* 伝統と気品を感じる山吹・ゴールド */
-                            goldLight: '#F3EFE0',/* ゴールドの薄い背景色 */
-                            light: '#F5F7FA',    /* 爽やかなセクション背景 */
-                            accent: '#E60012'   /* 警告・注目用の赤 */
+                            purpleBlue: '#2E3192', /* 公式HPのパープルを帯びたディープブルー */
+                            darkIndigo: '#1A1C54', /* より深い紺紫（背景・引き締め用） */
+                            gold: '#C5A059',       /* 伝統と気品を感じる山吹・ゴールド */
+                            goldLight: '#FBF9F3',  /* ゴールドを帯びた上品な極薄背景 */
+                            light: '#F4F5FA',      /* 爽やかで青みのある薄いグレー背景 */
+                            accent: '#E60012'      /* 注目用の赤 */
                         }
                     },
                     fontFamily: {
@@ -37,7 +37,7 @@
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
         }
         .hero-pattern {
-            background: linear-gradient(135deg, rgba(0, 64, 152, 0.95) 0%, rgba(0, 32, 91, 0.85) 100%), 
+            background: linear-gradient(135deg, rgba(46, 49, 146, 0.95) 0%, rgba(26, 28, 84, 0.85) 100%), 
                         url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -46,69 +46,36 @@
 </head>
 <body class="text-slate-800 bg-white">
 
-    <!-- Top Utility Bar (公式HP踏襲) -->
-    <div class="bg-kanto-navy text-white text-[11px] py-2 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div>学校法人守屋学園 関東第一高等学校</div>
-            <div class="flex gap-4 text-slate-300">
-                <a href="#" class="hover:text-white transition">在校生・保護者の方へ</a>
-                <span>|</span>
-                <a href="#" class="hover:text-white transition">卒業生の方へ</a>
-                <span>|</span>
-                <a href="#" class="hover:text-white transition">アクセス</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Header -->
-    <header class="bg-white shadow sticky top-0 z-50 border-b-2 border-kanto-blue">
+    <!-- Navigation Header (公式HPからのリンク遷移を考慮し、極限までシンプルに) -->
+    <header class="bg-white shadow sticky top-0 z-50 border-b-2 border-kanto-purpleBlue">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <!-- 関一エンブレムシミュレーション -->
-                <div class="w-12 h-12 bg-kanto-blue text-white flex flex-col items-center justify-center rounded font-serif font-bold text-xs leading-none">
+                <!-- 関一エンブレム -->
+                <div class="w-12 h-12 bg-kanto-purpleBlue text-white flex flex-col items-center justify-center rounded font-serif font-bold text-xs leading-none">
                     <span class="text-[10px] tracking-widest">KANTO</span>
                     <span class="text-base font-bold my-0.5">I</span>
                     <span class="text-[8px] tracking-wider">EST.1925</span>
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg leading-tight tracking-wider text-kanto-navy">関東第一高等学校</h1>
-                    <p class="text-[10px] text-kanto-gold font-bold tracking-widest">KANTO DAIICHI HIGH SCHOOL</p>
+                    <h1 class="font-bold text-base md:text-lg leading-tight tracking-wider text-kanto-darkIndigo">関東第一高等学校</h1>
+                    <p class="text-[9px] md:text-[10px] text-kanto-gold font-bold tracking-widest">KANTO DAIICHI HIGH SCHOOL</p>
                 </div>
             </div>
             
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-6 font-bold text-sm text-kanto-navy">
-                <a href="#concept" class="hover:text-kanto-blue transition">教育方針</a>
-                <a href="#points" class="hover:text-kanto-blue transition">叡智の5つの約束</a>
-                <a href="#scholarship" class="hover:text-kanto-blue transition">特待制度・学費免除</a>
-                <a href="#schedule" class="hover:text-kanto-blue transition">イベント一覧</a>
-                <a href="#schedule" class="bg-kanto-gold hover:bg-yellow-600 text-white px-5 py-2.5 rounded text-xs tracking-widest font-bold transition flex items-center gap-2 shadow-sm">
-                    <i class="far fa-calendar-alt"></i>イベント予約
+            <nav class="hidden md:flex items-center gap-6 font-bold text-xs lg:text-sm text-kanto-darkIndigo">
+                <a href="#points" class="hover:text-kanto-purpleBlue transition">叡智の5つの約束</a>
+                <a href="#scholarship" class="hover:text-kanto-purpleBlue transition">特待制度・学費免除</a>
+                <a href="https://www.kanto-ichiko.ac.jp/" class="text-slate-500 hover:text-kanto-purpleBlue transition flex items-center gap-1">
+                    <i class="fas fa-arrow-left"></i> 公式HPに戻る
                 </a>
             </nav>
-
-            <!-- Mobile Hamburger Button -->
-            <button onclick="toggleMobileMenu()" class="lg:hidden text-kanto-navy p-2 hover:bg-slate-100 rounded transition" aria-label="メニューを開く">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 py-4 px-6 space-y-4 shadow-inner">
-            <a href="#concept" onclick="toggleMobileMenu()" class="block font-bold text-kanto-navy hover:text-kanto-blue">教育方針</a>
-            <a href="#points" onclick="toggleMobileMenu()" class="block font-bold text-kanto-navy hover:text-kanto-blue">叡智の5つの約束</a>
-            <a href="#scholarship" onclick="toggleMobileMenu()" class="block font-bold text-kanto-navy hover:text-kanto-blue">特待制度・学費免除</a>
-            <a href="#schedule" onclick="toggleMobileMenu()" class="block font-bold text-kanto-navy hover:text-kanto-blue">イベント一覧</a>
-            <a href="#schedule" onclick="toggleMobileMenu()" class="block text-center bg-kanto-gold text-white font-bold py-3 rounded text-sm">
-                イベント予約はこちら
-            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-pattern text-white py-20 md:py-32 relative">
+    <section class="hero-pattern text-white py-20 md:py-28 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl bg-kanto-navy/80 p-6 md:p-10 rounded-lg border-l-4 border-kanto-gold backdrop-blur-sm">
+            <div class="max-w-2xl bg-kanto-darkIndigo/80 p-6 md:p-10 rounded-lg border-l-4 border-kanto-gold backdrop-blur-sm">
                 <span class="inline-block bg-kanto-gold text-white text-xs font-bold tracking-widest px-3 py-1 rounded mb-4">
                     令和9年度（2027年）4月新設
                 </span>
@@ -116,31 +83,18 @@
                     最難関国立大学を、<br class="hidden sm:inline">
                     現役合格するための「叡智」。
                 </h2>
-                <p class="text-sm md:text-base text-slate-200 mb-8 leading-relaxed">
-                    東京大学・京都大学・東京科学大学（旧東工大・東京医科歯科大）などの最難関国立大学へ。20名1クラスという圧倒的な少数精鋭環境と、自らも難関を突破してきた指導陣が、キミの一生モノの「自走エンジン」を起動させます。
+                <p class="text-xs md:text-sm text-slate-200 mb-8 leading-relaxed">
+                    東京大学・京都大学・東京科学大学（旧東工大等）をはじめとする最難関国立大学へ。20名1クラスという圧倒的な少数精鋭環境と、自らも最難関を突破してきた指導陣が、一生モノの「自走エンジン」を起動させます。
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#points" class="bg-white text-kanto-navy hover:bg-slate-100 font-bold px-6 py-3 rounded text-sm text-center transition shadow">
-                        叡智コースの特長を見る
+                    <a href="#points" class="bg-white text-kanto-purpleBlue hover:bg-slate-100 font-bold px-6 py-3 rounded text-xs md:text-sm text-center transition shadow">
+                        叡智コースの特長
                     </a>
-                    <a href="#scholarship" class="bg-kanto-gold hover:bg-yellow-600 text-white font-bold px-6 py-3 rounded text-sm text-center transition shadow">
+                    <a href="#scholarship" class="bg-kanto-gold hover:bg-yellow-600 text-white font-bold px-6 py-3 rounded text-xs md:text-sm text-center transition shadow">
                         3年間最大455万円免除の詳細
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Concept Section -->
-    <section id="concept" class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <p class="text-kanto-gold font-bold tracking-widest text-sm mb-2">EDUCATIONAL MISSION</p>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-kanto-navy mb-6">教育理念</h3>
-            <p class="text-lg md:text-xl text-slate-700 leading-relaxed font-medium font-serif">
-                「叡智・聡明・平和を尊び国際社会で活躍し、<br class="hidden md:block">
-                社会に敏感に反応し生涯学び続ける生徒の育成」
-            </p>
-            <div class="w-16 h-1 bg-kanto-gold mx-auto mt-8"></div>
         </div>
     </section>
 
@@ -149,8 +103,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-kanto-gold font-bold text-sm tracking-widest uppercase block">The 5 Promises</span>
-                <h3 class="text-3xl font-serif font-bold text-kanto-navy mt-1">叡智コース 5つの約束</h3>
-                <p class="text-xs text-slate-500 mt-2">最難関現役合格を可能にする、他校には真似できない5つのアプローチ</p>
+                <h3 class="text-3xl font-serif font-bold text-kanto-darkIndigo mt-1">叡智コース 5つの約束</h3>
+                <p class="text-xs text-slate-500 mt-2">最難関現役合格を現実にする、本校独自の教育パッケージ</p>
             </div>
 
             <!-- Grid -->
@@ -158,12 +112,12 @@
                 
                 <!-- Point 1 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
-                    <div class="bg-kanto-blue text-white p-4 flex items-center justify-between">
-                        <span class="font-serif font-bold text-xl tracking-wider">Point 1</span>
-                        <i class="fas fa-users text-lg opacity-75"></i>
+                    <div class="bg-kanto-purpleBlue text-white p-4 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg tracking-wider">Point 1</span>
+                        <i class="fas fa-users text-base opacity-75"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-serif font-bold text-lg text-kanto-navy mb-3">少数精鋭「師弟同行」</h4>
+                        <h4 class="font-serif font-bold text-base text-kanto-darkIndigo mb-3">少数精鋭「師弟同行」</h4>
                         <p class="text-xs text-slate-600 leading-relaxed">
                             1学年20名1クラス制を徹底。大学合格のその先を見据え、徹底的な対話を重視します。教員が一人ひとりの可能性を引き出し、生徒同士が切磋琢磨する高密度な36ヶ月をデザインします。
                         </p>
@@ -172,12 +126,12 @@
 
                 <!-- Point 2 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
-                    <div class="bg-kanto-blue text-white p-4 flex items-center justify-between">
-                        <span class="font-serif font-bold text-xl tracking-wider">Point 2</span>
-                        <i class="fas fa-bolt text-lg opacity-75"></i>
+                    <div class="bg-kanto-purpleBlue text-white p-4 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg tracking-wider">Point 2</span>
+                        <i class="fas fa-bolt text-base opacity-75"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-serif font-bold text-lg text-kanto-navy mb-3">逆算の「最速カリキュラム」</h4>
+                        <h4 class="font-serif font-bold text-base text-kanto-darkIndigo mb-3">逆算の「最速カリキュラム」</h4>
                         <p class="text-xs text-slate-600 leading-relaxed">
                             週6日制を採用し、圧倒的な授業数を確保。高校全範囲のインプットを「2年次までに完了」させます。3年次の1年間すべてを実戦演習と志望校別個別補強に充てる、絶対的合格戦略です。
                         </p>
@@ -186,12 +140,12 @@
 
                 <!-- Point 3 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
-                    <div class="bg-kanto-blue text-white p-4 flex items-center justify-between">
-                        <span class="font-serif font-bold text-xl tracking-wider">Point 3</span>
-                        <i class="fas fa-globe-americas text-lg opacity-75"></i>
+                    <div class="bg-kanto-purpleBlue text-white p-4 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg tracking-wider">Point 3</span>
+                        <i class="fas fa-globe-americas text-base opacity-75"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-serif font-bold text-lg text-kanto-navy mb-3">世界の叡智に触れる修学旅行</h4>
+                        <h4 class="font-serif font-bold text-base text-kanto-darkIndigo mb-3">世界の叡智に触れる修学旅行</h4>
                         <p class="text-xs text-slate-600 leading-relaxed">
                             アメリカまたはイギリスの海外トップユニバーシティを訪問し、世界の研究・知の最前線に触れます。<strong>特別助成金約50万円が免除</strong>され、国内旅行並みの自己負担で世界への視野を拓きます。
                         </p>
@@ -200,35 +154,36 @@
 
                 <!-- Point 4 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition lg:col-span-1">
-                    <div class="bg-kanto-navy text-white p-4 flex items-center justify-between">
-                        <span class="font-serif font-bold text-xl tracking-wider text-kanto-gold">Point 4</span>
-                        <i class="fas fa-graduation-cap text-lg text-kanto-gold"></i>
+                    <div class="bg-kanto-darkIndigo text-white p-4 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg tracking-wider text-kanto-gold">Point 4</span>
+                        <i class="fas fa-graduation-cap text-base text-kanto-gold"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-serif font-bold text-lg text-kanto-navy mb-3">自らも難関を突破した「指導陣」</h4>
+                        <h4 class="font-serif font-bold text-base text-kanto-darkIndigo mb-3">最難関を突破してきた「指導陣」</h4>
                         <p class="text-xs text-slate-600 leading-relaxed mb-4">
                             「教える」以上の、生涯役立つ知性・モチベーションへのインスピレーションを与える最高峰のプロフェッショナル陣です。
                         </p>
                         <div class="bg-slate-50 p-3 rounded text-[11px] text-slate-500 space-y-1">
-                            <strong class="text-kanto-navy">教員バックグラウンド：</strong>
-                            <p>・東京工業大大学院修（無機物性化学：コース責任者）</p>
-                            <p>・東京大学大学院修（日本上代文学・源氏物語）</p>
-                            <p>・東京学芸大（エンジニアリング・キャリアリーダー）</p>
-                            <p>・早稲田大、お茶の水女子大、海外大学院 など多数</p>
+                            <strong class="text-kanto-darkIndigo">教員バックグラウンド：</strong>
+                            <p>・馬場 先生（東京科学大学 大学院修 / 無機物性化学：コース責任者）</p>
+                            <p>・舟木 先生（東京大学 大学院博 / 日本上代文学・源氏物語）</p>
+                            <p>・木伏 先生（東京学芸大学 / エンジニアリング教育・キャリアリーダー）</p>
+                            <p>・金 先生（マーシャル大学 大学院修 / 英語）</p>
+                            <p>・田主 先生（早稲田大学卒 / チアリーダー）</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Point 5 -->
                 <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition lg:col-span-2">
-                    <div class="bg-kanto-navy text-white p-4 flex items-center justify-between">
-                        <span class="font-serif font-bold text-xl tracking-wider text-kanto-gold">Point 5</span>
-                        <i class="fas fa-school text-lg text-kanto-gold"></i>
+                    <div class="bg-kanto-darkIndigo text-white p-4 flex items-center justify-between">
+                        <span class="font-serif font-bold text-lg tracking-wider text-kanto-gold">Point 5</span>
+                        <i class="fas fa-school text-base text-kanto-gold"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-serif font-bold text-lg text-kanto-navy mb-2">校内完結型学習環境 「専用学習支援センター」</h4>
+                        <h4 class="font-serif font-bold text-base text-kanto-darkIndigo mb-2">校内完結型学習環境 「専用学習支援センター」</h4>
                         <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                            学校の中に「最強の予備校機能」をビルトイン。静かな環境で集中できるサイレント自習室や、ホワイトボード完備で議論可能なグループ自習室を備えた「校舎まるごと1棟」のリノベーションスペース。
+                            学校の中に「最強の予備校機能」をビルトイン。静かに集中できるサイレント自習室や、ホワイトボード完備で議論可能なグループ自習室を備えた「校舎まるごと1棟」のリノベーションスペース。
                         </p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                             <div class="flex items-start gap-2">
@@ -252,18 +207,18 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="text-kanto-gold font-bold text-sm tracking-widest block">TUITION WAIVER</span>
-                <h3 class="text-3xl font-serif font-bold text-kanto-navy mt-1">「才能」を全面的に支援する、費用免除特待</h3>
+                <h3 class="text-3xl font-serif font-bold text-kanto-darkIndigo mt-1">「才能」を全面的に支援する、費用免除特待</h3>
                 <p class="text-xs text-slate-500 mt-2">経済的な理由で最高レベルの学びを諦めさせない、守屋学園関東第一の決意です。</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                 <!-- Main Benefits List -->
-                <div class="lg:col-span-7 bg-kanto-navy text-white p-6 md:p-8 rounded-lg flex flex-col justify-between shadow-lg">
+                <div class="lg:col-span-7 bg-kanto-darkIndigo text-white p-6 md:p-8 rounded-lg flex flex-col justify-between shadow-lg">
                     <div>
-                        <h4 class="font-serif font-bold text-lg md:text-xl text-kanto-gold mb-6 border-b border-kanto-gold/30 pb-3">
+                        <h4 class="font-serif font-bold text-base md:text-lg text-kanto-gold mb-6 border-b border-kanto-gold/30 pb-3">
                             <i class="fas fa-award mr-2"></i>叡智コース特待生 3年間全額免除対象
                         </h4>
-                        <ul class="space-y-4 text-sm">
+                        <ul class="space-y-4 text-xs md:text-sm">
                             <li class="flex items-start gap-3">
                                 <span class="bg-kanto-gold text-white text-[10px] px-2 py-0.5 rounded shrink-0 mt-0.5">0円</span>
                                 <span>入学金・授業料・施設維持費（3年間分）</span>
@@ -279,7 +234,7 @@
                         </ul>
                     </div>
                     <div class="mt-8 pt-6 border-t border-white/20">
-                        <p class="text-xs text-slate-300">
+                        <p class="text-[11px] text-slate-300">
                             ※さらに、1・2年次外部模試優秀者（上位10%以内目安）への「学業優秀者表彰」（図書カード給付）や、本校指定大学（東大、京大、一橋、早稲田等）合格時の「大学入学支援金」制度も整備しています。
                         </p>
                     </div>
@@ -288,7 +243,7 @@
                 <!-- Simulation Visualizer -->
                 <div class="lg:col-span-5 bg-kanto-light p-6 md:p-8 rounded-lg border border-slate-200 flex flex-col justify-between shadow-sm">
                     <div>
-                        <h4 class="font-bold text-kanto-navy text-base mb-4">学費・学習費用 3年間シミュレーション</h4>
+                        <h4 class="font-bold text-kanto-darkIndigo text-sm mb-4">学費・学習費用 3年間シミュレーション</h4>
                         <p class="text-xs text-slate-500 mb-6">
                             予備校代や講習費、合宿費までがすべて含まれるため、一般的な難関私立進学クラス＋予備校の組み合わせと比較して、驚きのサポート力を発揮します。
                         </p>
@@ -296,7 +251,7 @@
                         <div class="space-y-4">
                             <!-- Other school -->
                             <div>
-                                <div class="flex justify-between text-xs font-bold text-slate-500 mb-1">
+                                <div class="flex justify-between text-[11px] font-bold text-slate-500 mb-1">
                                     <span>他私立難関＋塾予備校</span>
                                     <span>約 4,550,000 円</span>
                                 </div>
@@ -306,9 +261,9 @@
                             </div>
                             <!-- Kanto 1 -->
                             <div>
-                                <div class="flex justify-between text-xs font-bold text-kanto-blue mb-1">
+                                <div class="flex justify-between text-[11px] font-bold text-kanto-purpleBlue mb-1">
                                     <span>関東第一 叡智特待生</span>
-                                    <span class="text-kanto-gold text-sm font-black">0 円</span>
+                                    <span class="text-kanto-gold text-xs md:text-sm font-black">0 円</span>
                                 </div>
                                 <div class="w-full bg-slate-200 h-6 rounded overflow-hidden border border-kanto-gold/50">
                                     <div class="bg-kanto-gold h-full w-0 transition-all duration-1000" id="anim-bar"></div>
@@ -318,109 +273,37 @@
                     </div>
 
                     <div class="mt-8 bg-white p-4 rounded border border-kanto-gold/20 text-center">
-                        <span class="text-xs font-bold text-slate-500 block">3年間での学費・学習負担差額</span>
-                        <span class="text-2xl md:text-3xl font-black text-red-600 block mt-1">最大 約4,550,000円免除</span>
+                        <span class="text-[11px] font-bold text-slate-500 block">3年間での学費・学習負担差額</span>
+                        <span class="text-xl md:text-2xl font-black text-red-600 block mt-1">最大 約4,550,000円免除</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Schedule with Filter JS -->
-    <section id="schedule" class="py-20 bg-kanto-light border-t border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-kanto-gold font-bold text-sm tracking-widest block">2026 EVENT SCHEDULE</span>
-                <h3 class="text-3xl font-serif font-bold text-kanto-navy mt-1">イベントスケジュール（2026年度）</h3>
-                <p class="text-xs text-slate-500 mt-2">関イチフェア（説明会等）や関一祭の日程一覧。クリックで絞り込めます。</p>
-            </div>
-
-            <!-- Interactivity Filter -->
-            <div class="flex flex-wrap justify-center gap-2 mb-8">
-                <button onclick="filterEvents('all')" id="btn-all" class="event-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-kanto-blue text-white shadow-sm">
-                    すべて表示
-                </button>
-                <button onclick="filterEvents('spring')" id="btn-spring" class="event-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-kanto-navy hover:bg-slate-100 border border-slate-300">
-                    春・夏 (4月〜7月)
-                </button>
-                <button onclick="filterEvents('summer-end')" id="btn-summer-end" class="event-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-kanto-navy hover:bg-slate-100 border border-slate-300">
-                    夏休み後半 (8月)
-                </button>
-                <button onclick="filterEvents('autumn')" id="btn-autumn" class="event-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-kanto-navy hover:bg-slate-100 border border-slate-300">
-                    秋・冬 (9月〜12月)
-                </button>
-                <button onclick="filterEvents('festival')" id="btn-festival" class="event-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-kanto-navy hover:bg-slate-100 border border-slate-300 flex items-center gap-1">
-                    <i class="fas fa-star text-kanto-gold"></i> 文化祭（関一祭）
-                </button>
-            </div>
-
-            <!-- Events List -->
-            <div id="events-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                <!-- Spring/Summer items -->
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="4">4月18日(土)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="4">4月25日(土)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="5">5月23日(土)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="5">5月30日(土)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="6">6月13日(土)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="6">6月20日(土)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="6">6月27日(土)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="7">7月18日(土)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="7">7月29日(水)</div>
-                <div class="event-card spring bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="7">7月30日(木)</div>
-
-                <!-- Summer End (August) items -->
-                <div class="event-card summer-end bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="8">8月5日(水)</div>
-                <div class="event-card summer-end bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="8">8月6日(木)</div>
-                <div class="event-card summer-end bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold border-l-4 border-l-kanto-gold" data-month="8">8月8日(土)</div>
-                <div class="event-card summer-end bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold border-l-4 border-l-kanto-gold" data-month="8">8月9日(日)</div>
-                <div class="event-card summer-end bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="8">8月22日(土)</div>
-                <div class="event-card summer-end bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="8">8月23日(日)</div>
-
-                <!-- Autumn items -->
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="9">9月12日(土)</div>
-                <!-- Festival (文化祭) Special -->
-                <div class="event-card festival bg-kanto-gold text-white p-3 rounded text-center shadow-sm border border-kanto-gold transition text-xs font-black col-span-2 flex items-center justify-center gap-1" data-month="9">
-                    <i class="fas fa-star"></i> 関一祭: 9月19日(土)・20日(日)
-                </div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="9">9月26日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="9">9月27日(日)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="10">10月10日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="10">10月11日(日)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="10">10月17日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="10">10月24日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="10">10月31日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="11">11月7日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="11">11月14日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="11">11月21日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="11">11月28日(土)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="11">11月29日(日)</div>
-                <div class="event-card autumn bg-white p-3 rounded text-center shadow-sm border border-slate-200 transition text-xs font-bold" data-month="12">12月5日(金)</div>
-            </div>
-
-            <div class="mt-8 bg-white p-6 rounded-lg border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <div class="flex items-center gap-3">
-                    <span class="bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded">WEB予約制</span>
-                    <p class="text-xs text-slate-600 font-bold">イベントの開始時間、詳細な実施内容およびご予約については、公式申込サイトをご確認ください。</p>
-                </div>
-                <a href="#" class="bg-kanto-blue hover:bg-sky-800 text-white text-xs font-bold px-6 py-3 rounded tracking-wider shrink-0 transition shadow">
-                    公式WEB予約に進む <i class="fas fa-chevron-right ml-1"></i>
+    <!-- CTAS (公式ホームページへのコンバージョンを後押し) -->
+    <section class="py-16 bg-kanto-goldLight text-center border-t border-b border-kanto-gold/20">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-xl md:text-2xl font-serif font-bold text-kanto-darkIndigo mb-4">
+                限界線を越えて、新しい自分へ。
+            </h3>
+            <p class="text-xs md:text-sm text-slate-600 mb-8 leading-relaxed max-w-xl mx-auto">
+                叡智コースの詳細な出願要件や、学校説明会（関イチフェア）のご予約は、本校公式Webサイトの募集要項・予約システムからお願いいたします。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://www.kanto-ichiko.ac.jp/" class="bg-kanto-purpleBlue hover:bg-indigo-900 text-white font-bold px-8 py-3 rounded text-xs tracking-wider transition shadow">
+                    公式ホームページに戻る
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-kanto-navy text-slate-400 py-12 text-sm border-t-4 border-kanto-gold">
-        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
-            <h5 class="text-white text-lg font-bold">関東第一高等学校</h5>
-            <p class="text-xs text-slate-300">〒132-0031 東京都江戸川区松島2-10-11</p>
-            <div class="text-xs text-slate-400 space-y-2 max-w-md mx-auto bg-black/10 p-4 rounded border border-white/5">
-                <p class="font-bold text-slate-300">交通アクセス</p>
-                <p>・JR総武線「新小岩駅」南口より徒歩15分</p>
-                <p>・バス：「江戸川高校前」徒歩8分 ／ 「小松川警察署前」徒歩12分</p>
-                <p class="text-[11px] text-kanto-gold"><i class="fas fa-info-circle mr-1"></i>新校舎完成までは南門よりお越しください。完成後は正門をご利用いただけます。</p>
-            </div>
-            <div class="text-[11px] text-slate-500 pt-6 border-t border-white/5">
+    <footer class="bg-kanto-darkIndigo text-slate-400 py-10 text-xs border-t-4 border-kanto-gold">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+            <h5 class="text-white text-sm font-bold">関東第一高等学校</h5>
+            <p class="text-slate-400">〒132-0031 東京都江戸川区松島2-10-11</p>
+            <div class="text-[10px] text-slate-500 pt-4 border-t border-white/5">
                 &copy; Kanto Daiichi High School. All Rights Reserved.
             </div>
         </div>
@@ -428,40 +311,6 @@
 
     <!-- Scripts -->
     <script>
-        // Toggle Mobile Menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Event Schedule Filtering
-        function filterEvents(category) {
-            // Update active state of buttons
-            const buttons = document.querySelectorAll('.event-filter-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-kanto-blue', 'text-white');
-                btn.classList.add('bg-white', 'text-kanto-navy', 'border-slate-300');
-            });
-
-            const activeBtn = document.getElementById('btn-' + category);
-            activeBtn.classList.remove('bg-white', 'text-kanto-navy', 'border-slate-300');
-            activeBtn.classList.add('bg-kanto-blue', 'text-white');
-
-            // Show / Hide Cards
-            const cards = document.querySelectorAll('.event-card');
-            cards.forEach(card => {
-                if (category === 'all') {
-                    card.style.display = 'block';
-                } else {
-                    if (card.classList.contains(category)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
-            });
-        }
-
         // Animate simulation bar on load
         window.addEventListener('load', () => {
             setTimeout(() => {
