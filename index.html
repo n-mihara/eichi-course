@@ -14,7 +14,7 @@
                     colors: {
                         kanto: {
                             purple: '#9a5ebe',     /* 公式HP主軸の気品あるパープル */
-                            deepPurple: '#2d143c', /* 高級感のあるシックな深紫（引き締め用） */
+                            deepPurple: '#3d1e52', /* 重厚感と知性を与えるディープパープル（引き締め用） */
                             purpleLight: '#f6effa',/* 優しいラベンダー背景 */
                             purpleHover: '#844ca8',/* ボタン等のホバー用 */
                             gold: '#C5A059',       /* 伝統を紡ぐゴールド */
@@ -74,20 +74,29 @@
 </head>
 <body class="text-kanto-darkText bg-white">
 
-    <!-- Navigation Header (公式HPからの遷移を意識し、格調高くもシンプルなデザイン) -->
+    <!-- Navigation Header (公式HPからの遷移を意識し、左上に「叡智コース」を格調高く配置) -->
     <header class="bg-white shadow sticky top-0 z-50 border-b-2 border-kanto-purple">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div>
-                    <h1 class="font-bold text-base md:text-lg leading-none tracking-wider text-kanto-deepPurple">関東第一高等学校</h1>
-                    <p class="text-[9px] md:text-[10px] text-kanto-gold font-bold tracking-widest mt-1 font-num">KANTO DAIICHI HIGH SCHOOL</p>
+            
+            <!-- 【注目・変更箇所】学校名 ＋ 縦ライン ＋ 叡智コース の洗練されたロゴデザイン -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <div class="text-left">
+                    <h1 class="font-bold text-xs md:text-sm leading-none tracking-wider text-slate-500">関東第一高等学校</h1>
+                    <p class="text-[8px] md:text-[9px] text-kanto-gold font-bold tracking-widest mt-0.5 font-num uppercase leading-none">Kanto Daiichi High School</p>
+                </div>
+                <!-- 縦のアクセントライン -->
+                <div class="h-8 w-[1.5px] bg-kanto-purple/30"></div>
+                <!-- 叡智コースのアイデンティティ -->
+                <div class="flex flex-col justify-center">
+                    <span class="font-black text-base md:text-lg tracking-wider text-kanto-deepPurple">叡智コース</span>
+                    <span class="text-[7px] md:text-[8px] text-kanto-purple font-bold tracking-widest font-num uppercase leading-none mt-0.5">EICHI COURSE</span>
                 </div>
             </div>
             
             <nav class="hidden md:flex items-center gap-4 lg:gap-6 font-bold text-xs lg:text-sm text-kanto-deepPurple">
                 <a href="#points" class="hover:text-kanto-purple transition">叡智の5つの約束</a>
                 <a href="#scholarship" class="hover:text-kanto-purple transition">特待制度・学費免除</a>
-                <!-- 目立たない控えめな少人数説明会リンクボタン -->
+                <!-- 少人数説明会リンクボタン -->
                 <a href="https://forms.gle/73AG5Rv7WSMEA5kL7" target="_blank" rel="noopener noreferrer" class="border border-kanto-purple hover:bg-kanto-purpleLight text-kanto-purple px-3 py-1.5 rounded text-[11px] lg:text-xs font-bold transition flex items-center gap-1">
                     少人数説明会 申込 <i class="fas fa-external-link-alt text-[9px] opacity-75"></i>
                 </a>
@@ -179,7 +188,7 @@
                         <i class="fas fa-bolt text-base opacity-75"></i>
                     </div>
                     <div class="p-6">
-                        <h4 class="font-bold text-base text-kanto-deepPurple mb-3">逆算の「最速カリキュラム」</h4>
+                        <h4 class="font-bold text-base text-kanto-darkPurple mb-3" style="color: #3d1e52;">逆算の「最速カリキュラム」</h4>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
                             週6日制を採用し、圧倒的な授業数を確保。高校全範囲のインプットを「2年次までに完了」させます。3年次の1年間すべてを実戦演習と志望校別個別補強に充てる、絶対的合格戦略です。
                         </p>
